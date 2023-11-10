@@ -4,9 +4,12 @@ n = input()
 for i in range(0, int(n)):
     targetNumbers = sys.stdin.readline().split()
 
-    lenght = len(targetNumbers)-1
+    result = int(targetNumbers[0])
+    num = int(targetNumbers[0])
+    power = int(targetNumbers[1])
+
     
-    for j in range (0, lenght):
-        sys.stdout.write(targetNumbers[lenght-j])
+    for i in range (2, power+1):
+        result *= num
 
     print("{}".format(int(result % 10)))
