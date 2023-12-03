@@ -1,21 +1,23 @@
-import sys
 
-try:
 
-    data = input().split()
-    spaces = input().split()
+def get_space (current_space, number_of_spaces):
+    if current_space > number_of_spaces:
+        current_space -= number_of_spaces
+    return current_space
 
-    result = "NIGDY"
-    current_reflection = 0
+data = input().split()
+spaces = input().split()
 
-    for i in range (0, len(spaces)):
-        if spaces[i] == data[2]:
-            current_reflection += 1
-            if current_reflection == int(data[1]):
-                result = i
-                break
+result = "NIGDY"
+space = int(data[1])
 
-    print (result)
+for i in range (0, len(spaces)):
+    space += int(spaces[i])
+    current_reflection = get_space(space, int(data[0]))
+    space = current_reflection
+    print(space)
+    if space == data[2]:
+        result == space
+        break
 
-except:
-    sys.exit(0)
+print (result)
